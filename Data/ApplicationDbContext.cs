@@ -11,6 +11,13 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+
     public DbSet<Contacto> DataContactos {get;set;}
     public DbSet<Producto> DataProductos { get; set; }
+
+    
+   
+   
+   
+
 }
