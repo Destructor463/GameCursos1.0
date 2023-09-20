@@ -14,7 +14,7 @@
 
     
 <body>
-<div class="text-left">
+<div id="contenedor" class="text-left">
 
     <form asp-controller="Contacto" asp-action="Create">
 
@@ -48,17 +48,32 @@
 
             <input asp-for="Question" class="form-control" />
 
+
         </div>
 
-        <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+<button type="submit" class="btn btn-primary">Enviar Consulta</button>
+        
 
     </form>
 
     <h1>@ViewData["Message"]</h1>
+    
 
 </div>
 </body>  
 <style>
+
+button{
+    width: 150px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+    #contenedor{
+          width: 40%;
+  margin: 0 auto;
+
+    }
 .form-group{
     height: 100px;
     width: 500px;
@@ -73,6 +88,7 @@
   }
  h1{
     color: white;
+    text-align: center;
  }
 
  label{
