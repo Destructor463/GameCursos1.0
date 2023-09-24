@@ -14,15 +14,15 @@
         <div id="products" class="mb-3">
           <div class="row">
             @foreach (var item in Model) {
-            <div class="col-sm-4">
+            <div  class="col-sm-4">
               <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-img-actions">
-                    <img class="img-responsive" style="width: 100px; max-width: 100%; height: 100px"
+                <div  class="card-body">
+                  <div  class="card-img-actions">
+                    <img id="imagen-card" class="img-responsive" 
                        src="@item.ImageName" alt="@item.ImageName"  />
                   </div>
                 </div>
-                <div class="card-body">
+                <div  class="card-body">
                   <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
                   <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
                   <a class="btn btn-primary" asp-action="Add" asp-route-id="@item.Id">Add</a>
@@ -49,12 +49,32 @@ h1{
   color: red;
   font-size: 40px;
   width: 100x;
+  font-family: sans-serif;
    
 }
+.card{
+  width: 360px; 
+  height: 300px;
+  border-width: 5px;
+  box-shadow: 5px 5px 5px 4px  rgba(75, 11, 11, 0.44);
+}
+
   body {
-    background-image: url(https://img.freepik.com/vector-premium/videojuego-dibujado-mano-doodle-patrones-fisuras-elemento-controlador-joystick-consola-jugador-video_253081-1227.jpg?w=826);
+    background: linear-gradient(to right, #ff9900, #cc33ff);
    
 
+  }
+  #imagen-card{
+    
+    width: 100px;
+    
+    max-width: 100%; 
+    height: 100px;
+    
+    
+    
+
+    
   }
 
 </style>
