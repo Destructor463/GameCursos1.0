@@ -1,16 +1,16 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Registrar";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 id="titulo" >@ViewData["Title"]</h1>
 
 <body>
 <div class="row">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
+            <h2 id="titulo">Crea una cuenta nueva</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
@@ -31,17 +31,20 @@
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+   
+</div>
+<br>
+    <div class="col-md-12 col-md-offset-2" id="titulo3">
         <section>
-            <h3>Use another service to register.</h3>
+            <h3 id="titulo2">Utilice otro servicio para registrarse</h3>
             <hr />
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
                     <div>
                         <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
+                            No hay servicios de autenticación externos configurados. Mira esto <a href="https://go.microsoft.com/fwlink/?LinkID=532715">artículo
+                            acerca de la configuración de esta aplicación ASP.NET para admitir el inicio de sesión a través de servicios externos</a>.
                         </p>
                     </div>
                 }
@@ -61,8 +64,7 @@
             }
         </section>
     </div>
-</div>
-    
+
 </body>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
@@ -70,20 +72,29 @@
 
 <style>
 body{
-    background-image: url(https://img.freepik.com/fotos-premium/fondo-colorido-fondo-azul-rosa_327903-1933.jpg);
+    background-image: url(https://img.freepik.com/foto-gratis/acantilados-cuevas-desierto-lleno-pasto-seco-cielo-nublado-dia_181624-27961.jpg);
     background-size: cover;
 
 }
 
-h1{
+
+#titulo{
+    color: yellow;
     text-align: center;
 }
 
-h3{
-    
+.row{
+   justify-content: center; 
+}
 
+#titulo2{
+    color: yellow;
+  text-align: center;
 }
 
 
 
+p{
+    align-items: center
+}
 </style>
