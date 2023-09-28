@@ -4,20 +4,20 @@
 
 @{
 
-    ViewData["Title"] = "Contactame";
+    ViewData["Title"] = "CONTACTANOS";
 
 }
 
 <h1>@ViewData["Title"]</h1>
 
- 
+ a
 
     
 <body>
 <div id="contenedor" class="text-left">
 
-    <form asp-controller="Contacto" asp-action="Create">
-
+    <form  id="formulario" asp-controller="Contacto" asp-action="Create">
+<br>
         <div class="form-group">
 
             <label asp-for="Name">Nombre:</label>
@@ -51,7 +51,7 @@
 
         </div>
 
-<button type="submit" class="btn btn-primary">Enviar Consulta</button>
+<button style="background: rgb(192, 163, 110); border: red;"type="submit" class="btn btn-primary">Enviar Consulta</button>
         
 
     </form>
@@ -76,13 +76,19 @@ button{
     }
 .form-group{
     height: 100px;
-    width: 500px;
+    width: 450px;
 
 }
   body {
 
-    background-image: url(https://img.freepik.com/vector-gratis/fondo-abstracto-lluvia-pixeles_23-2148370435.jpg?w=1380&t=st=1695227572~exp=1695228172~hmac=1d5f7b3b869c6b02ad185d1b68b620a09805b1dd2697dc8c47f91b6cf7293cc6);
-
+width: 100%;
+   background-color: #5e7bf9;
+   background-image: url(https://i.pinimg.com/originals/b3/ed/5e/b3ed5e41719a6258d001fbb8944a503c.gif);
+   background-position: right ;
+   background-repeat: no-repeat;
+   background-size: 45%;
+   
+   
     
   
   }
@@ -95,5 +101,18 @@ button{
     color: white;
  }
  
+  #formulario{
+    height: 480px;
+     position: absolute;
+     top: 50%;
+     right: 50%;
+     transform: translate(-10%, -50%);
+     width: 500px;
+     background-color: white;
+     justify-content: center;
+     padding: 0 20px;
+     border-radius: 15px;
+     background-color: rgba(241, 184, 26, 0.397);
+     }
 
 </style>
