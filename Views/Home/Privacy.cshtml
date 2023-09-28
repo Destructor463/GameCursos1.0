@@ -1,6 +1,153 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "¿Quienes Somos?";
 }
-<h1>@ViewData["Title"]</h1>
+<link rel="stylesheet" href="~/css/index.css">
+<body>
+    
 
-<p>Use this page to detail your site's privacy policy.</p>
+<h2 style="text-align: center;">@ViewData["Title"]</h2><br>
+ <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="https://www.esat.es/wp-content/uploads/curso-desarrollo-videojuegos-unity-esat-valencia.jpg" alt="Imagen 1">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://www.escueladesarts.com/wp-content/uploads/crear-videojuegos.jpg" alt="Imagen 2">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://www.becasinternacionales.net/webapp/img/courses/836d50_introduccion-al-desarrollo-de-videojuegos_w688.jpg" alt="Imagen 3">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://i.ytimg.com/vi/YmgymXyeUUM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD3_1WClZso7eFLMq3WrF6maLHIEw" alt="Imagen 3">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://www.toulouselautrec.edu.pe/sites/default/files/imagenes/cursos/curso_Videojuegos_multiplataforma.png" alt="Imagen 3">
+    </div>
+    <button class="carousel-prev" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-next" onclick="nextSlide()">&#10095;</button>
+  </div><br>
+<script src="script.js"></script>
+
+<div style="display: flex; flex-wrap: ; width: 100%;">
+  <div style="width: 33.33%;">
+    <div style="background-color: rgb(221, 226, 201); padding: 10px;border-radius: ;">
+      <p style="text-align: center;">¿Quiénes somos?</p>
+        <p>GameCursos es un empresa que ofrece cursos de diseño y desarrollo de videojuegos, contamos con profesores profesionales orientados a la creación de videojuegos, que brindan una educación de vanguardia, ofreciendo programas de estudio actualizados y relevantes que reflejan las últimas tendencias y tecnologías en el diseño y desarrollo de videojuegos.
+
+      </p>
+    </div>
+  </div>
+  <div style="width: 33.33%;">
+    <div style="background-color: rgb(221, 226, 201); padding: 34px;border-radius: ;">
+      <p style="text-align: center;">Misión</p>
+        <p>"Nuestra misión es proporcionar cursos de alta calidad y recursos educativos que empoderen a nuestros estudiantes para convertirse en profesionales exitosos en la industria de los videojuegos. "
+      </p>
+    </div>
+  </div>
+  <div style="width: 33.33%;">
+    <div style="background-color: rgb(221, 226, 201); padding: 22px;border-radius: ;">
+      <p style="text-align: center;">Visión</p>
+        <p>"Ser la principal fuente de educación y capacitación en el campo del Diseño y Desarrollo de Videojuegos a nivel global. Nuestra visión es formar a la próxima generación de creadores de videojuegos, fomentando la innovación, la creatividad y la excelencia en el diseño y desarrollo de experiencias de juego únicas."
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+<style>
+body{
+    background: linear-gradient(to right, #e7d6bb, rgb(139, 177, 209));
+}
+
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-slide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide img {
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
+}
+</style>
+
+<script>
+
+  let currentIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const prevButton = document.querySelector('.carousel-prev');
+const nextButton = document.querySelector('.carousel-next');
+let intervalId;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.transform = `translateX(${100 * (i - index)}%)`;
+  });
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
+
+function startAutoSlide() {
+  intervalId = setInterval(nextSlide, 3000); // Cambia cada 3 segundos (3000 milisegundos)
+}
+
+function stopAutoSlide() {
+  clearInterval(intervalId);
+}
+
+showSlide(currentIndex);
+startAutoSlide();
+
+nextButton.addEventListener('click', () => {
+  nextSlide();
+  stopAutoSlide();
+});
+
+prevButton.addEventListener('click', () => {
+  prevSlide();
+  stopAutoSlide();
+});
+
+document.querySelector('.carousel-container').addEventListener('mouseenter', stopAutoSlide);
+
+document.querySelector('.carousel-container').addEventListener('mouseleave', startAutoSlide);
+</script>
