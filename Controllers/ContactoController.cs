@@ -38,7 +38,7 @@ namespace GameCursos.Controllers
 
             _context.SaveChanges();
 
-            ViewData["Message"] = string.Concat("Se registro el contacto" + objContacto.Name);
+            ViewData["Message"] = string.Concat("Pronto se le contactará estimado " + objContacto.Name);
 
             return View("Index");
 

@@ -1,6 +1,6 @@
 @model IEnumerable<GameCursos.Models.Producto>
 @{
-    ViewData["Title"] = "Cursos";  
+    ViewData["Title"] = "CURSOS";  
 }
 
 <body>
@@ -16,7 +16,7 @@
             @foreach (var item in Model) {
             <div  class="col-sm-4">
               <div class="card mb-3">
-                <div  class="card-body">
+                <div  style="background-color: #797AAC;"class="card-body">
                   <div  class="card-img-actions">
                     <img id="imagen-card" class="img-responsive" 
                        src="@item.ImageName" alt="@item.ImageName"  />
@@ -25,8 +25,8 @@
                 <div  class="card-body">
                   <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
                   <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
-                  <a class="btn btn-primary" asp-action="Add" asp-route-id="@item.Id">Add</a>
-                  <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">View</a>
+                  <a class="btn btn-primary" asp-action="Add" asp-route-id="@item.Id">Agregar</a>
+                  <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Ver</a>
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@
   </body>
  <style>
 h1{
-  text-indent: 285px;
+  text-indent: 240px;
   color: purple;
   width: 100x;
   font-size: 30px;
@@ -53,6 +53,7 @@ h1{
    
 }
 .card{
+  background-color: #a2b2be;
   width: 360px; 
   height: 300px;
   border-width: 5px;
@@ -60,9 +61,12 @@ h1{
 }
 
   body {
-    background: linear-gradient(to right, #ff9900, #cc33ff);
-   
-
+     width: 100%;
+   background-color: #2a2836;
+   background-image: url(https://i.pinimg.com/originals/0a/f2/c9/0af2c9dcb15d558c3695608bcc8c68ae.gif);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 40%;
   }
   #imagen-card{
     
