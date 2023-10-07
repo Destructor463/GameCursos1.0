@@ -13,10 +13,10 @@ using System.Dynamic;
 
 namespace GameCursos1.Controllers
 {
-    
+
     public class CarritoController : Controller
     {
-         private readonly ILogger<CarritoController> _logger;
+        private readonly ILogger<CarritoController> _logger;
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
 
@@ -65,7 +65,38 @@ namespace GameCursos1.Controllers
             return View(itemproforma);
         }
 
-    
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Save(int id, [Bind("Id,Cantidad,Precio,UserID")] Carrito itemcarrito)
+        {
+            if (id != itemcarrito.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(itemcarrito);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!_context.DataCarrito.Any(e => e.Id == id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(itemcarrito);
+        }
+
 
         public async Task<IActionResult> Delete(int? id)
         {
