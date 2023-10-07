@@ -1,15 +1,208 @@
 ﻿@{
-    ViewData["Title"] = "¿Quienes Somos?";
+
+    ViewData["Title"] = "¿QUIÉNES SOMOS?";
+
 }
-<h1>@ViewData["Title"]</h1>
+<link rel="stylesheet" href="~/css/index.css">
+<body>
+    
 
-<p>Vision</p>
-"Ser líderes en la industria de videojuegos a nivel global, creando experiencias de entretenimiento innovadoras y cautivadoras que inspiren a jugadores de todas las edades y culturas. Queremos ser reconocidos por nuestro compromiso con la creatividad, la calidad y la pasión por el mundo. de los videojuegos."
+<h2 style="text-align: center;">@ViewData["Title"]</h2><br>
+ <div class="carousel-container">
+  
+    <div class="carousel-slide">
+      <img src="https://www.escueladesarts.com/wp-content/uploads/crear-videojuegos.jpg" alt="Imagen 1">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://www.esat.es/wp-content/uploads/curso-desarrollo-videojuegos-unity-esat-valencia.jpg" alt="Imagen 2">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://www.becasinternacionales.net/webapp/img/courses/836d50_introduccion-al-desarrollo-de-videojuegos_w688.jpg" alt="Imagen 3">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://i.pinimg.com/564x/ea/55/85/ea5585a61dcff441e8ba9c97e6b9bddd.jpg" alt="Imagen 3">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://www.toulouselautrec.edu.pe/sites/default/files/imagenes/cursos/curso_Videojuegos_multiplataforma.png" alt="Imagen 3">
+    </div>
+    <button class="carousel-prev" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-next" onclick="nextSlide()">&#10095;</button>
+  </div><br>
+<script src="script.js"></script>
 
-<p>Mision</p>
+<div style="display: flex; flex-wrap: ; width: 100%;">
+  <div style="width: 33.33%;">
+    <div style="background-color: rgb(221, 226, 201); padding: 10px;border-radius: ;">
+      <p style="text-align: center;">¿Quiénes somos?</p>
+        <p style="text-align: justify;">"GameCursos es un empresa que ofrece cursos de diseño y desarrollo de videojuegos, contamos con profesores profesionales orientados a la creación de videojuegos, que brindan una educación de vanguardia, ofreciendo programas de estudio actualizados y relevantes que reflejan las últimas tendencias y tecnologías en el diseño y desarrollo de videojuegos.
+
+      </p>
+    </div>
+  </div>
+  <div style="width: 33.33%;">
+    <div style="background-color: rgb(221, 226, 201); padding: 34px;border-radius: ;">
+      <p style="text-align: center;">Misión</p>
+        <p style="text-align: justify;">"Nuestra misión es proporcionar cursos de alta calidad y recursos educativos que empoderen a nuestros estudiantes para convertirse en profesionales exitosos en la industria de los videojuegos. "
+      </p>
+    </div>
+  </div>
+  <div style="width: 33.33%;">
+    <div style="background-color: rgb(221, 226, 201); padding: 22px;border-radius: ;">
+      <p style="text-align: center;">Visión</p>
+        <p style="text-align: justify;">"Ser la principal fuente de educación y capacitación en el campo del Diseño y Desarrollo de Videojuegos a nivel global. Nuestra visión es formar a la próxima generación de creadores de videojuegos, fomentando la innovación, la creatividad y la excelencia en el diseño y desarrollo de experiencias de juego únicas."
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+<h3 style="text-align: center;">DESARROLLADORES</h3>
+ <div class="desarrolladores">
+    
+    <img src="https://i.pinimg.com/236x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg" alt="Imagen de ejemplo">
+    <br><p style="text-align: center;font-family: 'Courier New', Courier, monospace;"> LIDER:</p>
+    <p  style="text-align: center; font-family: 'Courier New', Courier, monospace; ">  ALEXANDER ABRAHAM MARINO CALIXTO </p>
+    <p style="text-align: center; font-family: 'Courier New', Courier, monospace; "> CORREO:</p>
+    <p style="text-align: center; font-family: 'Courier New', Courier, monospace; "> alexander_marino@usmp.pe </p>
+  
+
+  </div>
+  <div class="desarrolladores">
+    
+    <img src="https://i.pinimg.com/236x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg" alt="Imagen de ejemplo">
+    <br><p style="text-align: center;font-family: 'Courier New', Courier, monospace;">DEVELOPER TEAM:</p>
+    <p style="text-align: center;font-family: 'Courier New', Courier, monospace;">CRISTOPHER KARL NIEVES COLLACHAGUA</p>
+    <p style="text-align: center;font-family: 'Courier New', Courier, monospace;"> CORREO: </p>
+    <p style="text-align: center;font-family: 'Courier New', Courier, monospace;"> cristopher_nieves@usmp.pe </p>
+
+  </div>
+  <div class="desarrolladores">
+    
+    <img src="https://i.pinimg.com/236x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg" alt="Imagen de ejemplo">
+    <br><br><p style="text-align: center;font-family: 'Courier New', Courier, monospace;">DEVELOPER TEAM:</p>
+    <p style="text-align: center;font-family: 'Courier New', Courier, monospace;">NADIN MISAEL ASIN RAMOS.</p>
+    <p style="text-align: center;font-family: 'Courier New', Courier, monospace;"> CORREO: </p>
+    <p style="text-align: center;font-family: 'Courier New', Courier, monospace;">  nadin_asin@usmp.pe </p>
+
+  </div>
+ 
+
 
 <style>
-   h1{
-    text-align: center;
-   }
+
+.desarrolladores {
+      border: 1px solid #ccc; /* Borde para el cuadro */
+      padding: 30px; /* Espaciado interno */
+      margin: 30px ; /* Margen exterior */
+      display: inline-block; /* Para que los cuadros estén en línea */
+    width: 300px;
+    margin-left: 90px;
+    background-image: url(https://i.pinimg.com/736x/2e/66/bd/2e66bd296f6acb84258310f45c0e39ee.jpg);
+    border-radius: 20px;
+    }
+    
+    .desarrolladores img {
+      max-width: 100%; /* Asegura que la imagen no se salga del cuadro */
+      height: auto; /* Mantiene la proporción de la imagen */
+      display: block; /* Elimina el espacio en blanco debajo de la imagen */
+    }
+
+body{
+    background: linear-gradient(to right, #e7d6bb, rgb(139, 177, 209));
+}
+
+
+.carousel-container {
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-slide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide img {
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
+}
 </style>
+
+<script>
+
+  let currentIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const prevButton = document.querySelector('.carousel-prev');
+const nextButton = document.querySelector('.carousel-next');
+let intervalId;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.transform = `translateX(${100 * (i - index)}%)`;
+  });
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
+
+function startAutoSlide() {
+  intervalId = setInterval(nextSlide, 3000); // Cambia cada 3 segundos (3000 milisegundos)
+}
+
+function stopAutoSlide() {
+  clearInterval(intervalId);
+}
+
+showSlide(currentIndex);
+startAutoSlide();
+
+nextButton.addEventListener('click', () => {
+  nextSlide();
+  stopAutoSlide();
+});
+
+prevButton.addEventListener('click', () => {
+  prevSlide();
+  stopAutoSlide();
+});
+
+document.querySelector('.carousel-container').addEventListener('mouseenter', stopAutoSlide);
+
+document.querySelector('.carousel-container').addEventListener('mouseleave', startAutoSlide);
+</script>
