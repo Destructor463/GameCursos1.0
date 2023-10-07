@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using GameCursos.Models;
 
 namespace GameCursos.Data;
-
 
 public class ApplicationDbContext : IdentityDbContext
 {
@@ -12,12 +11,10 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
 
-    public DbSet<Contacto> DataContactos {get;set;}
+    public DbSet<Contacto> DataContactos { get; set; }
     public DbSet<Producto> DataProductos { get; set; }
-
-    public DbSet<Carrito> DataCarrito { get; set; }    
-   
-   
-   
-
+    public DbSet<Proforma> DataCarrito { get; set; }
+    public DbSet<Pago> DataPago { get; set; }
+    public DbSet<Pedido> DataPedido { get; set; }
+    public DbSet<DetallePedido> DataDetallePedido { get; set; }
 }
