@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = "Carrito";
-    IEnumerable<GameCursos.Models.Proforma> listItemsCarrito = new List<Proforma>();
+    IEnumerable<GameCursos.Models.Carrito> listItemsCarrito = new List<Carrito>();
     listItemsCarrito = @Model.elementosCarrito;
     Decimal montoTotal = @Model.montoTotal;
 }
@@ -29,7 +29,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (Proforma item in Model.elementosCarrito) {
+@foreach (Carrito item in Model.elementosCarrito) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Producto.Name)

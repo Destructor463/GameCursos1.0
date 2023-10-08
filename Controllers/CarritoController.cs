@@ -5,11 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using GameCursos.Data;
+using GameCursos.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using GameCursos.Data;
 using System.Dynamic;
-using GameCursos.Models;
 
 namespace GameCursos.Controllers
 {
@@ -22,7 +22,7 @@ namespace GameCursos.Controllers
 
         public CarritoController(ILogger<CarritoController> logger,
             ApplicationDbContext context,
-            UserManager<IdentityUser> userManager )
+            UserManager<IdentityUser> userManager)
         {
             _logger = logger;
             _context = context;
@@ -67,7 +67,7 @@ namespace GameCursos.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Save(int id, [Bind("Id,Cantidad,Precio,UserID")] Proforma itemcarrito)
+        public async Task<IActionResult> Save(int id, [Bind("Id,Cantidad,Precio,UserID")] Carrito itemcarrito)
         {
             if (id != itemcarrito.Id)
             {
@@ -97,6 +97,7 @@ namespace GameCursos.Controllers
             return View(itemcarrito);
         }
 
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -109,7 +110,6 @@ namespace GameCursos.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

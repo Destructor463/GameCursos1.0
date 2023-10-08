@@ -6,8 +6,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameCursos.Models
 {
-    [Table("t_proforma")]
-    public class Proforma
+    [Table("t_carrito")]
+    public class Carrito
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
