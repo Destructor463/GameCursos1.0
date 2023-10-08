@@ -1,8 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameCursos.Models
 {
-    [Table("t_pedido")]
+     [Table("t_pedido")]
     public class Pedido
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -1,11 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace GameCursos.Models
 {
-[Table("t_pago")]
+    [Table("t_pago")]
     public class Pago
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
         public int Id { get; set; }
         public DateTime PaymentDate { get; set; }
