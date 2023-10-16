@@ -1,0 +1,6 @@
+GET http://localhost:5192/api/producto/
+Accept: application/json
+
+
+GET http://localhost:5192/api/producto/1
+Accept: application/json
