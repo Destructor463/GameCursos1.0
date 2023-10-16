@@ -67,7 +67,7 @@ namespace GameCursos.Controllers
 
             _context.AddRange(itemsPedido);
 
-            foreach (Proforma p in itemsProforma.ToList())
+            foreach (Carrito p in itemsProforma.ToList())
             {
                 p.Status="PROCESADO"; //ATENDIDA
             }
