@@ -4,8 +4,8 @@ using GameCursos.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System.Diagnostics;
 
-var builder = WebApplication.CreateBuilder(args);
 
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHealthChecks();
 
@@ -13,7 +13,6 @@ builder.Services.AddHealthChecks();
 var connectionString=Environment.GetEnvironmentVariable("RENDER_POSTGRES_CONNECTION");
 if (string.IsNullOrEmpty(connectionString))
 {
-// Add services to the container.
     connectionString = builder.Configuration.GetConnectionString("PostgresSQLConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 }
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -21,6 +20,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+//Agregando los roles
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();

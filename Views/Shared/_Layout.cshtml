@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - GameCursos</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/GameCursos.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/petclinic.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -20,18 +20,21 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Nosotros</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">Cursos</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">Catalogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">Contactanos</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">Contactame</a>
                         </li>
+
                          <partial name="_MenuAdminPartial" />
+                      
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -43,13 +46,10 @@
             @RenderBody()
         </main>
     </div>
-    <style>
 
-        
-    </style>
     <footer class="border-top footer text-muted">
-        <div style="color: #000"class="container">
-            &copy; 2023 - GameCursos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Nosotros</a>
+        <div class="container">
+            &copy; 2023 - GameCursos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
