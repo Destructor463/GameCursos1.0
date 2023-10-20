@@ -7,9 +7,10 @@
 <h1>Crear Nuevo Producto</h1>
 
 <hr />
+<div id="contenedor" class="text-left">
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form id="formulario" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -41,15 +42,19 @@
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="button">
+               
+                <input id="button"type="submit" value="Create" class="btn btn-primary" />
+               
             </div>
         </form>
     </div>
 </div>
+ <a asp-action="Index">Volver a la lista</a>
+</div>
 
 <div>
-    <a asp-action="Index">Volver a la lista</a>
+   
 </div>
 
 @section Scripts {
@@ -58,11 +63,33 @@
 }
 
 <style>
-    body{
-        background-image: url(https://img.freepik.com/vector-premium/diseno-fondo-elemento-abstracto-diseno-tendencias_538866-344.jpg?size=626&ext=jpg&ga=GA1.1.1016474677.1696464000&semt=ais);
-        background-repeat: no-repeat;
-   background-size: 100%;
+    #formulario{
+   
+    height: 480px; 
+     width: 500px;
+     background-color: white;
+     justify-content: center;
+     padding: 0 20px;
+     border-radius: 15px;
+     background-color: rgba(241, 184, 26, 0.397);
+     }
 
+.button {
+    
+       width: 100%; /* Asegura que el contenedor ocupa todo el ancho disponible */
+    text-align: center; /* Centra el contenido horizontalmente */
+
+}
+
+
+    body{
+       width: 100%;
+   background-color: #e5dedc;
+   background-image: url(https://i.pinimg.com/originals/02/63/9a/02639ad4e5d176c3b9ffdb3db7c7664f.gif);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 40%;
+   
 }
 
 h1{
@@ -73,6 +100,16 @@ h1{
 
 label{
     
+}
+ #contenedor{
+          width: 40%;
+  margin: 0 auto;
+
+    }
+    .form-group{
+    height: 70px;
+    width: 450px;
+
 }
 
 </style>
