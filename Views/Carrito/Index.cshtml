@@ -8,11 +8,11 @@
     Decimal montoTotal = @Model.montoTotal;
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 style="text-align: center; color:white" >@ViewData["Title"]</h1>
 
 <a class="btn btn-primary" asp-controller="Pago" 
-        asp-action="Create" asp-route-monto="@montoTotal">Pagar</a><p>Total S/. @montoTotal</p>
-
+        asp-action="Create"  asp-route-monto="@montoTotal">Pagar</a><p>Total S/. @montoTotal</p>
+<div class="tabla-contenedor">
 <table class="table">
     <thead>
         <tr>
@@ -41,10 +41,40 @@
                 @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>
+
+<style>
+    
+body{
+  
+   width: 100%;
+   background-color: black;
+   background-image: url(https://i.pinimg.com/originals/a2/bc/3e/a2bc3e3d433976d5d7b859652b64e257.gif);
+   background-position: center;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 40%;
+   
+}
+p{
+ color: white;
+}
+
+.tabla-contenedor {
+      width: 80%; /* Define el ancho del contenedor */
+      margin: 0 auto; /* Centra el contenedor en la página */
+     background-color: rgba(300, 255, 255, 0.9);
+      padding: 20px; /* Espacio interno alrededor del contenedor */
+      border-radius: 15px;
+    }
+
+  
+
+</style>
