@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using GameCursos.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System.Diagnostics;
+using GameCursos.Service;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +26,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+//Registro mi logica customizada y reuzable
+builder.Services.AddScoped<ProductoService, ProductoService>();
 
 var app = builder.Build();
 
