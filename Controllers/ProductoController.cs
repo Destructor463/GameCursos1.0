@@ -24,7 +24,7 @@ namespace GameCursos.Controllers
         public async Task<IActionResult> Index()
         {
             var productos = await _productoService.GetAll();
-            return productos != null ? 
+            return productos != null ?
                             View(productos) :
                             Problem("Entity set 'ApplicationDbContext.DataProductos'  is null.");
         }
@@ -70,7 +70,8 @@ namespace GameCursos.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             var producto = await _productoService.Get(id);
-            if( producto == null){
+            if (producto == null)
+            {
                 return NotFound();
             }
             return View(producto);
@@ -114,7 +115,8 @@ namespace GameCursos.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             var producto = await _productoService.Get(id);
-            if( producto == null){
+            if (producto == null)
+            {
                 return NotFound();
             }
             return View(producto);

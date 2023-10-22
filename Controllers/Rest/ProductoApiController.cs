@@ -9,9 +9,9 @@ using GameCursos.Data;
 using GameCursos.Models;
 using GameCursos.Service;
 
-
 namespace GameCursos.Controllers.Rest
 {
+    
     [ApiController]
     [Route("api/producto")]
     public class ProductoApiController : ControllerBase

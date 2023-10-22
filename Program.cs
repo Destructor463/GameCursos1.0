@@ -5,6 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System.Diagnostics;
 using GameCursos.Service;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHealthChecks();

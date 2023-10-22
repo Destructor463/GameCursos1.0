@@ -2,9 +2,90 @@
 @{
     ViewData["Title"] = "Pago";
 }
+
+<style>
+    body {
+        width: 100%;
+        background-color: #1d1d1d;
+        background-image: url(https://i.pinimg.com/originals/26/67/e0/2667e0f188eafba8fc3a082d52137607.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .form-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Aplicamos flexbox en dirección vertical */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-container form {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        max-width: 400px; /* Establece el ancho máximo del formulario */
+        width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
+        margin: 0 0 0 40px; /* Margen automático izquierdo y derecho para centrar el formulario */
+         /* Margen izquierdo adicional para empujarlo hacia la derecha */
+    }
+
+    /* Estilos para el título */
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        color: white;
+        background-image: linear-gradient(to right, #ff6600, #33cc33, #ff9900, #00ccff, #ff3300);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 20px 0;
+    }
+
+    /* Estilos para las etiquetas */
+    .control-label {
+        color: #ffcc00;
+        font-weight: bold;
+        padding:0 10px;
+        margin: 10px auto; /* Espacio entre etiquetas */
+    }
+
+    /* Estilos para los campos de entrada */
+    .form-control {
+      display: flex;
+        background-color: #333;
+        color: white;
+        border: 1px solid #ffcc00;
+        margin: 10px 40px; /* Espacio entre campos */
+    }
+
+    /* Estilos para el botón */
+    .btn-primary {
+        background-color: #ff6600;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+ .message {
+        text-align: center;
+        font-size: 18px;
+        color: white;
+        padding: 10px;
+        background: linear-gradient(to right, purple, #ff2400); /* Morado a la izquierda y escarlata a la derecha */
+        border-radius: 5px;
+        margin: 10px 0;
+    }
+    
+</style>
 <h1>@ViewData["Title"]</h1>
 
-    <div class="container">
+    <div class="form-container">
 
         <div class="row">
           <div class="col-sm-10 mt-5">
@@ -12,52 +93,52 @@
               <div class="form-group row">
                 <input type="hidden" asp-for="UserID"/>
                 <div class="col-sm-2">
-                  <label asp-for="NombreTarjeta" class="control-label"></label>
+                  <label asp-for="NombreTarjeta" class="control-label">Nombre Tarjeta</label>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-8">
                   <input asp-for="NombreTarjeta" class="form-control" />
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-2">
-                  <label asp-for="NumeroTarjeta" class="control-label"></label>
+                  <label asp-for="NumeroTarjeta" class="control-label">Número Tarjeta</label>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-8">
                   <input asp-for="NumeroTarjeta" class="form-control" data-inputmask="'mask': '9999-9999-9999-9999'" />
                 </div>
               </div>              
               <div class="form-group row">
                 <div class="col-sm-2">
-                  <label asp-for="DueDateYYMM" class="control-label"></label>
+                  <label asp-for="DueDateYYMM" class="control-label">Fecha de Caducidad</label>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-8">
                   <input asp-for="DueDateYYMM" class="form-control" data-inputmask="'mask': '99/99', 'placeholder': 'yy/mm'" />
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-2">
-                  <label asp-for="Cvv" class="control-label"></label>
+                  <label asp-for="Cvv" class="control-label">CVV</label>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-8">
                   <input asp-for="Cvv" class="form-control" data-inputmask="'mask': '999', 'placeholder': '999'" />
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-2">
-                  <label asp-for="MontoTotal" class="control-label"></label>
+                  <label asp-for="MontoTotal" class="control-label">Monto Total</label>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-8">
                   <input asp-for="MontoTotal" class="form-control" data-thousands="," data-decimal="." />
                 </div>
               </div>  
               <div class="form-group row">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-2">
+                <div class="col-sm-8 text-center">
                   <button type="submit" class="btn btn-primary">Pagar</button> 
                 </div>
               </div>
             </form>
-            <h1>@ViewData["Message"]</h1>
+            <div class="message">@ViewData["Message"]</div>
           </div>
         </div>
     </div>
