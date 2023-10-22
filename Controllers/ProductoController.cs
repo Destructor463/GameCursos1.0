@@ -7,41 +7,41 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GameCursos.Data;
 using GameCursos.Models;
+using GameCursos.Service;
 
 namespace GameCursos.Controllers
 {
     public class ProductoController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ProductoService _productoService;
 
-        public ProductoController(ApplicationDbContext context)
+        public ProductoController(ProductoService productoService)
         {
-            _context = context;
+            _productoService = productoService;
         }
 
         // GET: Producto
         public async Task<IActionResult> Index()
         {
-              return _context.DataProductos != null ? 
-                          View(await _context.DataProductos.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.DataProductos'  is null.");
+            var productos = await _productoService.GetAll();
+            return productos != null ? 
+                            View(productos) :
+                            Problem("Entity set 'ApplicationDbContext.DataProductos'  is null.");
         }
 
         // GET: Producto/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.DataProductos == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var producto = await _context.DataProductos
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var producto = await _productoService.FirstOrDefault(id);
             if (producto == null)
             {
                 return NotFound();
             }
-
             return View(producto);
         }
 
@@ -60,8 +60,7 @@ namespace GameCursos.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(producto);
-                await _context.SaveChangesAsync();
+                await _productoService.CreateOrUpdate(producto);
                 return RedirectToAction(nameof(Index));
             }
             return View(producto);
@@ -70,14 +69,8 @@ namespace GameCursos.Controllers
         // GET: Producto/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.DataProductos == null)
-            {
-                return NotFound();
-            }
-
-            var producto = await _context.DataProductos.FindAsync(id);
-            if (producto == null)
-            {
+            var producto = await _productoService.Get(id);
+            if( producto == null){
                 return NotFound();
             }
             return View(producto);
@@ -99,12 +92,11 @@ namespace GameCursos.Controllers
             {
                 try
                 {
-                    _context.Update(producto);
-                    await _context.SaveChangesAsync();
+                    await _productoService.CreateOrUpdate(producto);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductoExists(producto.Id))
+                    if (!_productoService.ProductoExists(producto.Id))
                     {
                         return NotFound();
                     }
@@ -121,18 +113,10 @@ namespace GameCursos.Controllers
         // GET: Producto/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.DataProductos == null)
-            {
+            var producto = await _productoService.Get(id);
+            if( producto == null){
                 return NotFound();
             }
-
-            var producto = await _context.DataProductos
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
             return View(producto);
         }
 
@@ -141,22 +125,8 @@ namespace GameCursos.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.DataProductos == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.DataProductos'  is null.");
-            }
-            var producto = await _context.DataProductos.FindAsync(id);
-            if (producto != null)
-            {
-                _context.DataProductos.Remove(producto);
-            }
-            
-            await _context.SaveChangesAsync();
+            await _productoService.Delete(id);
             return RedirectToAction(nameof(Index));
         }
-
-        private bool ProductoExists(int id)
-        {
-          return (_context.DataProductos?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
-    }}
+    }
+}
