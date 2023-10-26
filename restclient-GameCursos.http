@@ -1,19 +1,19 @@
-GET http://localhost:5192/api/producto/
+GET http://localhost:5159/Producto
 Accept: application/json
 
 
-GET http://localhost:5192/api/producto/1
+GET http://localhost:5159/api/Producto/1
 Accept: application/json
 
-POST http://localhost:5192/api/producto HTTP/1.1
+POST http://localhost:5159/api/Producto HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "Otro Producto5",
-    "descripcion": "Este libro otro producto5",
-    "precio": 2,
-    "porcentajeDescuento": 0,
-    "imageName": "https://drive.google.com/uc?export=view&id=1rE3ccQdUuUyEpqF5kZiQxt4D-VXYLyJ7",
-    "status": "Active"
+    "name": "Introduccion a Unity",
+    "descripcion": "Aprende a crear videojuegos 3D o 2D desde cero con esta plataforma",
+    "precio": 170,
+    "porcentajeDescuento": 40,
+    "imageName": "https://www.akademus.es/blog/wp-content/uploads/2019/07/unreal-engine-logo-1200x675.jpg",
+    "status": "Activo"
 }
