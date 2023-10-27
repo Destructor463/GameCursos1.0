@@ -10,10 +10,18 @@ Content-Type: application/json
 Accept: application/json
 
 {
+<<<<<<< HEAD
     "name": "Fundamentos en Pixel Art",
     "descripcion": "En este curso diseñaras artes creado de forma digital basado en píxeles, utilizando herramientas de edición de imagen sencillas.",
     "precio": 200,
     "porcentajeDescuento": 40,
     "imageName": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaouZKAZEFr57ujTkjRYvGBBE1j8i7hetNaH_jo7fHLFq9alKQInapHoh2pQdn5SngS-4&usqp=CAU",
+=======
+    "name": "GG NOMAS",
+    "descripcion": "Es un lenguaje de programacion general tipado, orientado a objetos, que permite el desarrollo desde aplicaciones basicas",
+    "precio": 190,
+    "porcentajeDescuento": 60,
+    "imageName": "https://cdn2.dineroenimagen.com/media/dinero/styles/gallerie/public/images/blogs/javalogo.jpg",
+>>>>>>> 898fd045314c8bcaf041316411ea5639432cd5d8
     "status": "Activo"
 }
