@@ -10,10 +10,10 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "Introduccion a Unity",
-    "descripcion": "Aprende a crear videojuegos 3D o 2D desde cero con esta plataforma",
-    "precio": 170,
+    "name": "Fundamentos en Pixel Art",
+    "descripcion": "En este curso diseñaras artes creado de forma digital basado en píxeles, utilizando herramientas de edición de imagen sencillas.",
+    "precio": 200,
     "porcentajeDescuento": 40,
-    "imageName": "https://www.akademus.es/blog/wp-content/uploads/2019/07/unreal-engine-logo-1200x675.jpg",
+    "imageName": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaouZKAZEFr57ujTkjRYvGBBE1j8i7hetNaH_jo7fHLFq9alKQInapHoh2pQdn5SngS-4&usqp=CAU",
     "status": "Activo"
 }
