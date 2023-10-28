@@ -4,7 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalles</h1>
 
 <div>
     <h4>Producto</h4>
@@ -49,22 +49,27 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Volver a la Lista</a>
 </div>
 
 <style>
 
 body{
 width: 100%;
-    background-image: url(https://i.pinimg.com/originals/1d/a4/cd/1da4cd1771b784d6829729fb56ae9b88.gif);
+  
     background-position: talla */center;
     background-repeat: no-repeat;
     background-size: cover; 
+    background-color:#92ADF5;
 }
 
 h1{
     color:yellow;
+}
+
+h4{
+    color: red;
 }
 
 </style>
