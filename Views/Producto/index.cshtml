@@ -4,11 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Productos</h1>
-
+<h1>PRODUCTOS</h1>
+<div class="tabla-contenedor">
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear Nuevo producto</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -33,6 +34,7 @@
             <th></th>
         </tr>
     </thead>
+    
     <tbody>
 @foreach (var item in Model) {
         <tr>
@@ -62,11 +64,13 @@
         </tr>
 }
     </tbody>
+    
 </table>
+</div>
 
 <style>
     body{
-        background-color: #83A2F2;
+        background-color: #9FEFE5;
     
     background-position: center;
     background-repeat: no-repeat;
@@ -74,7 +78,7 @@
     }
 
     h1{
-       color: yellow;
+       color: black;
     text-align: center;
     }
 
@@ -84,5 +88,14 @@
 
     a{
         color:red
+    }
+
+.tabla-contenedor {
+      width: 113%; /* Define el ancho del contenedor */
+      margin: 0 auto; /* Centra el contenedor en la página */
+     background-color: rgba(220, 255, 255, 0.9);
+      padding: 20px; /* Espacio interno alrededor del contenedor */
+      border-radius: 15px;
     }
+
 </style>
