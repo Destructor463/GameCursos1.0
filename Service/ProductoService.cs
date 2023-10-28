@@ -8,7 +8,6 @@ using GameCursos.Models;
 using GameCursos.Data;
 
 namespace GameCursos.Service
-
 {
     public class ProductoService
     {
@@ -22,13 +21,26 @@ namespace GameCursos.Service
             _context = context;
         }
 
-        public async Task<Producto> CreateOrUpdate(Producto p){
-            //Regla de Negocio 1
-            if(p.Precio < 1){
-                throw new SystemException("No se puede ingresar datos con precio menor 1 sol");
+       public async Task<Producto> CreateOrUpdate(Producto p)
+        {
+            // Regla de Negocio 1
+            if (p.Precio < 1)
+            {
+                throw new SystemException("No se puede ingresar datos con precio menor a 1 sol");
             }
-            //Regla de Negocio 2
-            _context.Add(p);
+
+            // Verificar si se está creando o actualizando un producto
+            if (p.Id == 0) // Suponiendo que 0 representa un nuevo producto
+            {
+                // Se está creando un nuevo producto
+                _context.Add(p);
+            }
+            else
+            {
+                // Se está actualizando un producto existente
+                _context.Update(p);
+            }
+
             await _context.SaveChangesAsync();
             return p;
         }
@@ -63,14 +75,18 @@ namespace GameCursos.Service
             return producto;
         }
 
-        public async Task Delete(int? id){
-            var producto = await _context.DataProductos.FindAsync(id);
-            if (producto != null)
-            {
-                _context.DataProductos.Remove(producto);
-            }
-            await _context.SaveChangesAsync();
-        }
+        public async Task Delete(int? id)
+{
+    var producto = await _context.DataProductos.FindAsync(id);
+    if (producto != null)
+    {
+        // Eliminar registros relacionados en la tabla "t_carrito"
+        var carritosRelacionados = _context.DataCarrito.Where(c => c.Producto.Id == id);
+        _context.DataCarrito.RemoveRange(carritosRelacionados);
+        _context.DataProductos.Remove(producto);
+    }
+    await _context.SaveChangesAsync();
+}
 
         public bool ProductoExists(int id)
         {
