@@ -4,7 +4,7 @@ using GameCursos.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System.Diagnostics;
 using GameCursos.Service;
-
+using GameCursos.Integrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +29,9 @@ builder.Services.AddControllersWithViews();
 
 //Registro mi logica customizada y reuzable
 builder.Services.AddScoped<ProductoService, ProductoService>();
+
+//Registro de las integraciones
+builder.Services.AddScoped<JsonplaceholderAPIIntegration, JsonplaceholderAPIIntegration>();
 
 var app = builder.Build();
 
