@@ -16,13 +16,13 @@
 <body>
 <div id="contenedor" class="text-left">
 
-    <form  id="formulario" asp-controller="Contacto" asp-action="Create">
+<form action="https://formsubmit.co/cristophernieves30@gmail.com" method="POST">
 <br>
         <div class="form-group">
 
             <label asp-for="Name">Nombre:</label>
 
-            <input asp-for="Name" class="form-control" />
+            <input asp-for="Name" name="name" class="form-control" />
 
         </div>
 
@@ -30,7 +30,7 @@
 
             <label asp-for="Email">Email:</label>
 
-            <input asp-for="Email" class="form-control" />
+            <input asp-for="Email" name="email" class="form-control" />
 
         </div>
 
@@ -38,7 +38,7 @@
 
             <label asp-for="Phone">Teléfono:</label>
 
-            <input asp-for="Phone" class="form-control" />
+            <input asp-for="Phone" name="phone" class="form-control" />
 
         </div>
 
@@ -46,7 +46,7 @@
 
             <label asp-for="Question">Pregunta:</label>
 
-            <input asp-for="Question" class="form-control" />
+            <input asp-for="Question" name="subject" class="form-control" />
 
 
         </div>
@@ -56,7 +56,7 @@
 
     </form>
 
-    <h1>@ViewData["Message"]</h1>
+
     
 
 </div>
